@@ -14,12 +14,13 @@ Use following command to build Debian package with temperature monitor applicati
 Temperature monitor is a Play application and can be run locally with following command:
 
 `sbt run`
-
+1)
 There's `docker-compose.yml` file provided to run local instances of Grafana and InfluxDB for testing.
 Use following command to run them:
 
 `docker-compose up`
-
+or
+2) 
 `docker run -p 8086:8086 -v ${PWD}:/var/lib/influxdb --name influxdb \
  -v $PWD/influxdb.conf:/etc/influxdb/influxdb.conf:ro \
       influxdb -config /etc/influxdb/influxdb.conf`
