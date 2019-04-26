@@ -20,7 +20,9 @@ Use following command to run them:
 
 `docker-compose up`
 
-`docker run -p 8086:8086 -v ${PWD}:/var/lib/influxdb --name influxdb`
+`docker run -p 8086:8086 -v ${PWD}:/var/lib/influxdb --name influxdb \
+ -v $PWD/influxdb.conf:/etc/influxdb/influxdb.conf:ro \
+      influxdb -config /etc/influxdb/influxdb.conf`
 
 `docker run -p 3000:3000 --link influxdb:influxdb --name grafana grafana/grafana ` 
 
