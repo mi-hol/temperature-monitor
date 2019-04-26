@@ -19,7 +19,8 @@ There's `docker-compose.yml` file provided to run local instances of Grafana and
 Use following command to run them:
 
 `docker-compose up`
- 
+`docker run -p 8086:8086 -v ${PWD}:/var/lib/influxdb --name influxdb`
+`docker run -p 3000:3000 --link influxdb:influxdb --name grafana grafana/grafana ` 
 You can also completely disable InfluxDB integration by setting `app.influxDb.enable` property to `false`.
 Grafana integration can be disabled by setting `app.grafana.enable` property to `false`.
 
